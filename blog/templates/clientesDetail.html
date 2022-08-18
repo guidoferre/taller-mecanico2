@@ -1,0 +1,9 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+   <h1>Detalle del cliente {{cliente.nombre}} {{cliente.apellido}} </h1>
+ <p>aqui encontraras los detalles que especifico el cliente para la reparacion de su vehiculo</p>
+<p> Vehiculo: {{cliente.vehiculo}}</p>
+    
+{% endblock bloqueQueCambia  %}

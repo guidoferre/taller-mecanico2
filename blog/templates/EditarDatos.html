@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+  <h1>Bienvenido aqui podras editar tus datos</h1>
+  
+  <p>En esta seccion podras editar tus datos, escoge la opcion que desees </p>
+  <ul>
+    <a href="{% url 'EditarPerfil' %}">Editar Perfil</a>
+    <p></p>
+    <a href="{% url 'CrearAvatar' %}">Cargar Avatar</a>
+  </ul>  
+  
+    
+{% endblock bloqueQueCambia  %}
+    

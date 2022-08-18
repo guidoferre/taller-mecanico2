@@ -1,0 +1,32 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+   <h1>Bienvenidos a la seccion de clientes </h1>
+   <p>Aqui encontraras un listado de todos tus clientes y sus vehiculos</p>
+   
+   <ul>
+
+        
+    {% for clientes in object_list  %}
+        <li>
+           <a href="{% url 'clientesDetail' clientes.id %}">{{clientes}}</a> 
+        </li>
+        <button>
+            <a href="{% url 'EliminarCliente' clientes.id %}">Eliminar</a> 
+        </button>
+        
+    {% endfor %}
+        
+
+
+    </ul>
+
+    
+
+    
+{% endblock bloqueQueCambia  %}
+    
+
+
+

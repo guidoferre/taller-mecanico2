@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+  <h1>Bienvenidos a la seccion de Cargar Clientes con formularios</h1>
+
+  <form action="{% url 'CreaCliente'n %}" method="POST">
+    {% csrf_token %}
+
+   {{form.as_p}}
+    <input type="submit" value="Enviar">
+
+  </form>
+  
+    
+{% endblock bloqueQueCambia  %}
+    

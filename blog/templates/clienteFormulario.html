@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+  <h1>Bienvenidos a la seccion de Cargar Clientes </h1>
+
+  <form action="{% url 'clienteFormulario' %}" method="POST">
+    {% csrf_token %}
+
+   {{miFormulario.as_p}}
+    <input type="submit" value="Enviar">
+
+  </form>
+  
+    
+{% endblock bloqueQueCambia  %}
+    

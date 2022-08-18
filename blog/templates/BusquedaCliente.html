@@ -1,0 +1,20 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+  <h1>Bienvenidos a la seccion de busqueda de clientes</h1>
+
+  <form action="{% url 'Buscar' %}" method="GET">
+    {% csrf_token %}
+
+    <p>Cliente: <input type="text"  name= "nombre"></p>
+
+
+   
+    <input type="submit" value="buscar">
+
+  </form>
+  
+    
+{% endblock bloqueQueCambia  %}
+    

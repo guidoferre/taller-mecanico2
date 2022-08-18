@@ -1,0 +1,25 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+   <h1>Bienvenido </h1>
+   <p>Aqui podras editar o elimar a tus clientes</p>
+   <ul>
+
+    {% for clientes in lista_clientes %}
+        <div>
+            <form action="{% url 'eliminaCliente' clientes.id %}"  class="forms" method="POST"> {% csrf_token %}
+            <li>{{clientes.nombre}} {{clientes.apellido}} </li>
+
+                <button type="submit" class="btn btn-danger" > eliminar</button>
+                <button class='btn btn-secondary'><a href="{% url 'editarCliente' clientes.id %}">editar</a></button>
+            </form>
+        </div>
+        
+    {% endfor %}
+</ul>
+
+
+    
+{% endblock bloqueQueCambia  %}
+            

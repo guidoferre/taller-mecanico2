@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+  <h1>Bienvenido, aqui podras editar tus datos</h1>
+
+  <form  method="POST">
+    {% csrf_token %}
+
+   {{miFormulario.as_p}}
+    <input type="submit" value="Guardar">
+
+  </form>
+  <br>
+  <a href="{% url 'EditarDatos' %}">Volver</a>
+    
+{% endblock bloqueQueCambia  %}
+    

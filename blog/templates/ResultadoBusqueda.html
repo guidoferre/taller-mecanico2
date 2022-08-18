@@ -1,0 +1,32 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+
+<p>Estamos buscando al cliente : {{nombre}}</p>
+
+
+    {% if cliente %}
+
+        <ul>
+            
+            {% for clientes in cliente %}
+
+               <li>
+                {{clientes.nombre}} {{clientes.apellido}} - {{clientes.vehiculo}}
+
+               </li>
+                
+            {% endfor %}
+
+        </ul>
+    
+    {% else %}
+
+       <p> No hubo coincidencias  :'( </p>
+
+    {% endif %}
+    
+    
+{% endblock bloqueQueCambia  %}
+    

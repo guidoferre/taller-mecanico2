@@ -1,0 +1,20 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+  <h1>Eliminar</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+
+   <p>Esta seguro que desea eliminar</p>>
+   <a href="{% url 'clientelist' %}">Volver</a>
+    
+    <input type="submit" value="Confirmar">
+
+  </form>
+  <br>
+  
+    
+{% endblock bloqueQueCambia  %}
+    
