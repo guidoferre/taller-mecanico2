@@ -16,25 +16,34 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'blog/css/styles.css' %}" rel="stylesheet" />
+
+        
+        {% block style %}
+            
+        {% endblock style %}
+            
+
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}"><img src='../static/blog/assets/img/icon-home.png'  width="25px"> Inicio</a>
-                <a class="navbar-brand" href="{% url 'lista' %}"><img src='../static/blog/assets/img/icon-clientes.png'  width="25px"> Clientes</a>
-                <a class="navbar-brand" href="{% url 'clienteFormulario' %}">Cargar clientes</a>
-                <a class="navbar-brand" href="{% url 'BusquedaCliente' %}"><img src='../static/blog/assets/img/icon-search.png'  width="30px"> Buscar clientes</a>
-                <a class="navbar-brand" href="{% url 'mecanico' %}">Mecanicos</a>
+                <a class="navbar-brand" href="{% url 'quienesSomos' %}">¿Quienes Somos?</a>
+                <a class="navbar-brand" href="{% url 'clienteFormulario' %}">Cargarse como cliente</a>
+                <a class="navbar-brand" href="{% url 'MecanicoFormulario' %}">Mecanicos</a>
                 <a class="navbar-brand" href="{% url 'reparaciones' %}"><img src='../static/blog/assets/img/icon-servicio.png'  width="25px"> Reparaciones</a>
+                <a class="navbar-brand" href="{% url 'lista' %}"><img src='../static/blog/assets/img/icon-clientes.png'  width="25px"> Clientes</a>
 
                 
                 {% if user.is_authenticated %}
                      
                      {% if url %}
                      <img src="{{url}}" height="40px" alt="avatar">
+                     
                         
                      {% endif %}
+                    
 
                     <p style="color:white" class="user">Bienvenido {{user.username}}</p>
                     <a class="btn btn-primary" href="{% url 'EditarDatos' %}"><b>Editar Perfil</b></a>

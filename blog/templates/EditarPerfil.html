@@ -4,7 +4,7 @@
 {% block bloqueQueCambia %}
   <h1>Bienvenido, aqui podras editar tus datos</h1>
 
-  <form  method="POST">
+  <form  method="POST" class='form-edit'>
     {% csrf_token %}
 
    {{miFormulario.as_p}}

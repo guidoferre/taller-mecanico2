@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+
+{% block bloqueQueCambia %}
+  <h1>Bienvenidos a la seccion de Cargar mecanicos </h1>
+  <p>Aqui podras cargar a tus mecanicos</p>
+
+  <form action="{% url 'MecanicoFormulario' %}" method="POST">
+    {% csrf_token %}
+
+   {{miFormulario.as_p}}
+    <input type="submit" value="Enviar">
+
+  </form>
+  
+  
+{% endblock bloqueQueCambia  %}
+    
